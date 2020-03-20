@@ -7,5 +7,5 @@ int()
 float()
 str()
 
-round()
+round(), round(a, b)
 range() #for "for loop"
