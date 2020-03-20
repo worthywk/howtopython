@@ -1,0 +1,11 @@
+## basic functions
+
+input() 
+print()
+
+int()
+float()
+str()
+
+round()
+range() #for "for loop"
