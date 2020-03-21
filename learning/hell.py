@@ -2,7 +2,7 @@ def hell(n):
     print("Welcome to Hell\n" * int(n))
 
 
-def new_number():
+def two_numbers():
     while True:
         try:
             number1 = int(input("Введите первое число: "))
