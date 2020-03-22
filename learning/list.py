@@ -39,4 +39,4 @@ for user in users:
         if i == users[-1][-1]:
             print(i)
         else:
-            print(str(i) +", ",end="")
+            print(str(i) + ", ", end="")
