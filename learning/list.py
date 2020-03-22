@@ -36,4 +36,7 @@ users = [
 
 for user in users:
     for i in user:
-        print(i)
+        if i == users[-1][-1]:
+            print(i)
+        else:
+            print(str(i) +", ",end="")
