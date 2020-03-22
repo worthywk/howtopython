@@ -13,6 +13,7 @@ name1, name2, name3 = user_list
 print(name1, name2, name3)
 
 user_tuple = tuple(user_list)
+empty_tuple = tuple()
 
 print(user_list[:])
 print(user_tuple[:])
