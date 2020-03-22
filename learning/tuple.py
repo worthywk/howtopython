@@ -32,3 +32,5 @@ for country in countries:
     for city in cities:
         city_name, city_population = city
         print("City name = {}, City population = {}".format(city_name, city_population))
+
+print(countries[0][2][0][0], countries[0][2][0][1])
