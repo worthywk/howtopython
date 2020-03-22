@@ -34,6 +34,13 @@ users = [
     ["Slavik", 29]
 ]
 
+user = list()
+user.append("Ann")
+user.append("23")
+
+users.append(user)
+users.append(list(["David", 15]))
+
 for user in users:
     for i in user:
         if i == users[-1][-1]:
