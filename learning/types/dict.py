@@ -119,3 +119,15 @@ for keys in super_dict:
         print(key, " - ", super_dict[keys][key])
 
 #  ЗАДАНИЕ: найти в словаре super_dict значение "ridov"
+
+value_to_found = input("Enter value need to found: ")
+for keys in super_dict:
+    if super_dict[keys] == value_to_found:
+        print("ridov is found")
+    print(f'\n{keys}:')
+    for key in super_dict[keys]:
+        if super_dict[keys][key] == value_to_found:
+            value_status = "ridov is found"
+        print(key, " - ", super_dict[keys][key])
+
+print(f'\n{value_status}')
