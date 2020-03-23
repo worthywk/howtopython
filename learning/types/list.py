@@ -22,6 +22,7 @@ print(numbers6)
 companies1 = ["Microsoft", "Google", "microsoft", "Apple"]
 
 companies2 = companies1  # reference!
+companies100 = list(companies1)  # new list, уже не ссылка
 companies3 = companies1[:]  # new list
 companies4 = companies1.copy()  # new list
 companies5 = copy.deepcopy(companies1)  # new list

@@ -24,3 +24,10 @@ def two_numbers():
         #finally: (не обязательный блок, который выполняется вне зависимости от получения ошибки
 
     print("Завершение программы")
+def delete_item_in_list(item, items):
+    if item in items:
+        print(item,"deleted")
+        items.remove(item)
+
+    else:
+        print(item,"is not in list")
