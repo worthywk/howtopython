@@ -1,4 +1,4 @@
-file_name = "C:/users/ikriatov/new_new_file1.txt"
+file_name = "C:/users/ikriatov/file.txt"
 names_list = list()
 
 counts = int(input("Введите количество имён в списке: "))
@@ -18,5 +18,4 @@ with open(file_name, "a") as file:
 
 with open(file_name, "r") as file:
     lines = file.readlines()
-    for line in lines:
-        print(line)
+    print(lines)

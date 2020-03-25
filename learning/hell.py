@@ -21,13 +21,23 @@ def two_numbers():
         except Exception as err:
             print("Общее исключение:\nТип ошибки: ", err)
 
-        #finally: (не обязательный блок, который выполняется вне зависимости от получения ошибки
+        # finally: (не обязательный блок, который выполняется вне зависимости от получения ошибки
 
     print("Завершение программы")
+
+
 def delete_item_in_list(item, items):
     if item in items:
-        print(item,"deleted")
+        print(item, "deleted")
         items.remove(item)
 
     else:
-        print(item,"is not in list")
+        print(item, "is not in list")
+
+
+def comma_separator(string, seps):
+    for i in string:
+        if i not in seps:
+            print(i, end="")
+        else:
+            print(i, end=" ")
