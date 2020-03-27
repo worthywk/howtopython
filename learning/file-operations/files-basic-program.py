@@ -1,4 +1,4 @@
-file_name = "C:/users/ikriatov/file.txt"
+file_name = "files/basic-program.txt"
 names_list = list()
 
 counts = int(input("Введите количество имён в списке: "))

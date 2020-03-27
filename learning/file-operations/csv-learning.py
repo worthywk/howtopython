@@ -1,8 +1,8 @@
 import csv
 from learning import hell
 
-File = "C:/users/ikriatov/file.csv"
-File1 = "C:/users/ikriatov/file1.csv"
+File = "files/file.csv"
+File1 = "files/file1.csv"
 
 users = [
     ["Ihor", 28],
