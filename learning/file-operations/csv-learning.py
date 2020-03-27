@@ -44,7 +44,7 @@ with open(File1, "w", newline="") as file1:
     writer.writeheader()
     writer.writerows(users1)
 
-    some_user = {'name': 'David','age': 15}
+    some_user = {'name': 'David', 'age': 15}
     writer.writerow(some_user)
 
 with open(File1, "r", newline="") as file1:
