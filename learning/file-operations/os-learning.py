@@ -1,33 +1,42 @@
 import os
 
 # os.rmdir('renamed_files')
+folders = ('files', 'renamed_files')
+file_name = 'hello.txt'
+
+print(folders)
+
+files_index = folders.index('files')
+renamed_files_index = folders.index('renamed_files')
 
 try:
-    os.mkdir("files")
-    print("Folder 'files' is created")
-except Exception:
-    print("Folder 'files' is already created")
-os.rename('files', 'renamed_files')
-print("'files' is renamed to 'renamed_files'")
+    os.mkdir(folders[files_index])
+    print("Folders '{}' is created".format(folders[files_index]))
+except ValueError:
+    print("Folder '{}' is already created".format(folders[files_index]))
+os.rename(folders[files_index], folders[renamed_files_index])
+print("Folder '{}' is renamed to '{}'".format(folders[files_index], folders[renamed_files_index]))
 
-if os.path.exists('renamed_files'):
-    print("Folder 'renamed_files' exists")
+if os.path.exists(folders[renamed_files_index]):
+    print("Folder '{}' exists".format(folders[renamed_files_index]))
 else:
-    print("Folder doesn't exist")
+    print(f"Folder {folders[renamed_files_index]} does not exist")
 
-with open('renamed_files/hello.txt', "w") as text_file:
+full_file_name = '{}/{}'.format(folders[renamed_files_index], file_name)
+
+with open(full_file_name, "w") as text_file:
     text_file.write("Hello")
 
-with open('renamed_files/hello.txt', "r") as text_file:
-    print(f"File 'hello.txt' is created: {text_file.readline()}")
+with open(full_file_name, "r") as text_file:
+    print(f"File '{file_name}' is created: {text_file.readline()}")
 
-os.remove("./renamed_files/hello.txt")
-print("File 'hello.txt' is deleted")
-os.rmdir('renamed_files')
-print("Folder 'renamed_files' is deleted")
+os.remove(full_file_name)
+print("File '{}' is deleted".format(file_name))
+os.rmdir(folders[renamed_files_index])
+print("Folder '{}' is deleted".format(folders[renamed_files_index]))
 
-for folder in ['files', 'renamed_files']:
+for folder in folders:
     if os.path.exists(folder):
         print(f"Folder '{folder}' exists")
     else:
-        print(f"Folder '{folder}' doesn't exist")
+        print(f"Folder '{folder}' does not exist")
