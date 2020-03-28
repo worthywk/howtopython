@@ -35,8 +35,8 @@ print("File '{}' is deleted".format(file_name))
 os.rmdir(folders[renamed_files_index])
 print("Folder '{}' is deleted".format(folders[renamed_files_index]))
 
-for folder in folders:
+for index, folder in enumerate(folders):
     if os.path.exists(folder):
-        print(f"Folder '{folder}' exists")
+        print(f"Folder '{index, folder}' exists")
     else:
-        print(f"Folder '{folder}' does not exist")
+        print(f"Folder '{index, folder}' does not exist")
