@@ -25,6 +25,7 @@ print ('.'.join(string.split()[0][:4].lower().capitalize()).replace('.'," "))
 ### Exercises
 
 # 1
+
 print('''
 Write a Python program to change a given string
 to a new string where the first and last chars
@@ -143,3 +144,43 @@ def xxx1(string, item):
 
 print(xxx(string, 'S'))
 print(xxx1(string, '$'))
+
+print(''' Write a Python program to get a single string from two given strings,
+separated by a space and swap the first two characters of each string
+Sample String : 'abc', 'xyz'
+Expected Result : 'xyc abz'
+''')
+
+def swap_chars(str1, str2):
+	
+	string = '{} {}'.format(str1, str2)
+	string = string.split()
+	string = string[1][:2] + string[0][2:] + " " + string[0][:2] + string[1][2:]
+	return string
+	
+print(swap_chars(string))
+
+# 7
+
+print('''Write a Python program to add 'ing' at the end of a given
+string (length should be at least 3). If the given string already
+ends with 'ing' then add 'ly' instead. If the string length of
+the given string is less than 3, leave it unchanged
+
+Sample String : 'abc'
+Expected Result : 'abcing'
+Sample String : 'string'
+Expected Result : 'stringly'
+''')
+
+string = input("enter string: ")
+
+def add_ending_string(string):
+	if len(string) >= 3:
+		if string[-3:] != 'ing':
+			string += 'ing'
+		else:
+			string += 'ly'
+	return string
+
+print(add_ending_string(add_ending_string(string)))
