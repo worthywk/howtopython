@@ -4,6 +4,5 @@ people = [Person("Ihor", 28), Employee("Slavik", 29, "NovaPoshta"), Student("Dav
 
 for human in people:
 	if isinstance(human, Person):
-		print("True"
-			  )
+		print("True")
 	human.display_info()
