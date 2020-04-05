@@ -1,65 +1,57 @@
 import random
 
+
 def create_list_game():
 
     while True:
         try:
-            games_count = int(input('Please enter number of games you want to play: '))
-            if games_count not in range(1, 6):
-                print("Sorry but value must be in range from 1 to 5\n")
+            games_number = int(input('Please enter number of games you want to play: '))
+            if games_number not in range(2, 6):
+                print("Sorry but value must be in range from 2 to 5\n")
                 continue
             else:
-                if games_count == 1:
-                    print(f'\nGood choice! You want to play {games_count} game')
-                else:
-                    print(f'\nGood choice! You want to play {games_count} games')
+                print(f'\nGood choice! You want to play {games_number} games')
                 break
 
         except ValueError as error:
             print('Wrong value')
-
-
-    games_list = []
-    for game_count  in range(1, games_count + 1):
+    games = []
+    for game_number in range(1, games_number + 1):
         while True:
-            game = str(input('Enter your {} game: '.format(game_count)))
+            game = str(input('Enter your {} game: '.format(game_number)))
             if not game or game.startswith(" "):
                 print('Game\'s name should not be empty')
                 continue
             break
-        games_list.append(game)
+        games.append(game)
 
     print('\nGreat! Here is your list of games:' )
 
-    for games in games_list:
-        print("{} game is: {}".format(games_list.index(games) + 1, games))
+    for game in games:
+        print("{} game is: {}".format(games.index(game) + 1, game))
 
-    return games_list
+    return games
 
 
-def random_method(games_list):
+def random_method(games):
 
     print('\nDo you want to get random game? ')
     while True:
-        answer = input().lower()
-        if answer == 'yes':
+        yes_no = input().lower()
+        if yes_no == 'yes':
             while True:
                 random_method_list = ('Simple', 'Super')
-                print('Woohoo! Now please choose my random method: 0 - {}, 1 - {}'.format(random_method_list[0], random_method_list[1]))
+                print('Please choose random method: 0 - {0[0]}, 1 - {0[1]}'.format(random_method_list))
                 method_type = int(input())
                 if method_type == 0:
-                    random_game = random.choice(games_list)
+                    random_game = random.choice(games)
                     print('Easy! Your random game is: ',random_game,'enjoy your gaming!')
                     break
-
-
                 elif method_type == 1:
-
                     games_dict = dict()
                     win_number = int(input('Yeah! This is super method! Please enter win number for game: '))
-
                     while True:
-                        random_game = random.choice(games_list)
+                        random_game = random.choice(games)
                         if random_game in games_dict:
                             games_dict[random_game] += 1
                         else:
@@ -71,13 +63,12 @@ def random_method(games_list):
                             break
                         else:
                             continue
-
                     break
                 else:
                     print('Sorry, method is not found, please type 0 or 1')
             break
 
-        elif answer == 'no':
+        elif yes_no == 'no':
             print("Unfortunately...but you can try again;)")
             break
 
@@ -95,13 +86,13 @@ while True:
         count += 1
     else:
         print('\nDo you want to repeat?')
-        answer = input()
+        answer = input().lower()
         if answer == "yes":
             print('Do you want to reset your games list')
             answer = input()
             if answer == "yes":
-                games_list = create_list_game()
-                random_method(games_list)
+                new_games_list = create_list_game()
+                random_method(new_games_list)
             else:
                 random_method(games_list)
         elif answer == "no":
