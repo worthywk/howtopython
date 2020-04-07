@@ -18,14 +18,14 @@ def create_list_game():
     games = []
     for game_number in range(1, games_number + 1):
         while True:
-            game = str(input('Enter your {} game: '.format(game_number)))
-            if not game or game.startswith(" "):
+            game = str(input('Enter your {} game: '.format(game_number))).strip()
+            if not game:
                 print('Game\'s name should not be empty')
                 continue
             break
         games.append(game)
 
-    print('\nGreat! Here is your list of games:' )
+    print('\nGreat! Here is your list of games:')
 
     for game in games:
         print("{} game is: {}".format(games.index(game) + 1, game))
@@ -45,7 +45,7 @@ def random_method(games):
                 method_type = int(input())
                 if method_type == 0:
                     random_game = random.choice(games)
-                    print('Easy! Your random game is: ',random_game,'enjoy your gaming!')
+                    print('Easy! Your random game is: ', random_game, 'enjoy your gaming!')
                     break
                 elif method_type == 1:
                     games_dict = dict()
