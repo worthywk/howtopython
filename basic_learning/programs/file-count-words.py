@@ -4,12 +4,12 @@ import os
 def get_words(filename):
 	with open(filename, 'r') as file:
 		text = file.read()
-		text = text.replace('\n',' ')
-		text = text.replace(',','').replace('.','').replace('?','').replace('!','')
+		text = text.replace('\n', ' ')
+		text = text.replace(',', '').replace('.', '').replace('?', '').replace('!', '')
 		text = text.lower()
 		words = text.split()
 		words.sort()
-	return(words)
+	return words
 
 
 def get_words_dict(words):
